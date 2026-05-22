@@ -1,0 +1,26 @@
+Summarize by computer agregations
+
+such as:
+1. mean
+2. median
+3. maximum
+4. minimum
+
+these agregations or statistical measures, as they're
+commonly referred to, are helpful in describing the general
+and specific characteristics of data.
+
+info()
+
+head()
+
+describe()
+the method returns a statistical summary
+washers[["BrandName"]].describe()
+
+it takes the column and return the count, unique, the most shown item and its frequency.
+
+it has differencies between categorical and continous variables appear.
+
+[['column']].value_counts() only counts
+[['column']].value_counts(normalize=True) percentage
