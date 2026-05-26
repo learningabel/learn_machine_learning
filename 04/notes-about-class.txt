@@ -1,0 +1,37 @@
+find missing data and deciding what to do
+
+if the value is missing, the series value will be True for each instance that matches that condition.
+
+just create a mask such as:
+
+mask = students["State"].isnull()
+
+and then apply it to students object
+
+students[mask]
+
+and it will return the instances where found missing data for an specific feature.
+
+then we can decide to remove them or not. to remove, use the drop method.
+
+students.dropna()
+
+to specify the columns:
+
+students = students.dropna(subset=["Zip", "State"], how="all")
+this will persist.
+
+to replace data to a missing field, use the method .fillna({"Gender": "Female"})
+
+or to take the median value, for example on age:
+
+students.fillna({"Age": students["Age"].median()})
+
+allow us to replace all the missing values to a column or feature.
+
+with mask we can capture only the data we wanna change.
+
+to replace:
+
+mask = (students['City'] == 'Niles') & (students['State'] == 'MI')
+students.loc[mask, 'Zip'] = 49120
